@@ -1,11 +1,36 @@
 import React from "react";
 import { Layout } from "./layouts/Layout";
 import { Example1 } from "./pages/Example1";
+import styled from "@emotion/styled";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Example2 } from "./pages/Example2";
+import { About } from "./pages/About";
+
+const NotFound = styled.div`
+    text-align: center;
+`;
 
 function App() {
     return (
         <Layout>
-            <Example1 />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/example1" element={<Example1 />} />
+                <Route path="/example2" element={<Example2 />} />
+
+                <Route
+                    path={"*"}
+                    element={
+                        <>
+                            <NotFound>
+                                404 <br /> NOT FOUND
+                            </NotFound>
+                        </>
+                    }
+                />
+            </Routes>
         </Layout>
     );
 }

@@ -9,6 +9,7 @@ import { About } from "./pages/About";
 import { BlogPosts } from "./pages/BlogPosts";
 import Counter from "./pages/Counter";
 import Photo from "./pages/Photo";
+import TodoList from "./pages/TodoList";
 
 const NotFound = styled.div`
     text-align: center;
@@ -25,7 +26,7 @@ function App() {
                 <Route path="/blog-posts" element={<BlogPosts />} />
                 <Route path="/photo" element={<Photo />} />
                 <Route path="/counter" element={<Counter />} />
-
+                <Route path="/todo" element={<TodoList />} />
                 <Route
                     path={"*"}
                     element={
